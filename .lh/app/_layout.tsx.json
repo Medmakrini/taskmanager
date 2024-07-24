@@ -1,0 +1,86 @@
+{
+    "sourceFile": "app/_layout.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 17,
+            "patches": [
+                {
+                    "date": 1721844404308,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1721844412945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n export default function RootLayout() {\n   return (\n     <Stack>\n+      <Stack.Screen name=\"home\" />\n       <Stack.Screen name=\"index\" />\n-      <Stack.Screen name=\"index\" />\n     </Stack>\n   );\n }\n"
+                },
+                {
+                    "date": 1721844419837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,8 @@\n \n export default function RootLayout() {\n   return (\n     <Stack>\n-      <Stack.Screen name=\"home\" />\n       <Stack.Screen name=\"index\" />\n     </Stack>\n   );\n }\n"
+                },
+                {
+                    "date": 1721844546830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,22 @@\n-import { Stack } from \"expo-router\";\n+import React from 'react';\n+import { NavigationContainer } from '@react-navigation/native';\n+import { createStackNavigator } from '@react-navigation/stack';\n+import TaskListScreen from './screens/TaskListScreen';\n+import AddTaskScreen from './screens/AddTaskScreen';\n+import { Provider } from 'react-redux';\n+import store from './store';\n \n-export default function RootLayout() {\n+const Stack = createStackNavigator();\n+\n+export default function App() {\n   return (\n-    <Stack>\n-      <Stack.Screen name=\"index\" />\n-    </Stack>\n+    <Provider store={store}>\n+      <NavigationContainer>\n+        <Stack.Navigator initialRouteName=\"TaskList\">\n+          <Stack.Screen name=\"TaskList\" component={TaskListScreen} />\n+          <Stack.Screen name=\"AddTask\" component={AddTaskScreen} />\n+        </Stack.Navigator>\n+      </NavigationContainer>\n+    </Provider>\n   );\n }\n"
+                },
+                {
+                    "date": 1721844562001,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react';\n import { NavigationContainer } from '@react-navigation/native';\n import { createStackNavigator } from '@react-navigation/stack';\n-import TaskListScreen from './screens/TaskListScreen';\n+//import TaskListScreen from './screens/TaskListScreen';\n import AddTaskScreen from './screens/AddTaskScreen';\n import { Provider } from 'react-redux';\n import store from './store';\n \n"
+                },
+                {
+                    "date": 1721844569792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import React from 'react';\n import { NavigationContainer } from '@react-navigation/native';\n import { createStackNavigator } from '@react-navigation/stack';\n //import TaskListScreen from './screens/TaskListScreen';\n-import AddTaskScreen from './screens/AddTaskScreen';\n+//import AddTaskScreen from './screens/AddTaskScreen';\n import { Provider } from 'react-redux';\n-import store from './store';\n+//import store from './store';\n \n const Stack = createStackNavigator();\n \n export default function App() {\n"
+                },
+                {
+                    "date": 1721844575161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,22 @@\n+import React from 'react';\n+import { NavigationContainer } from '@react-navigation/native';\n+import { createStackNavigator } from '@react-navigation/stack';\n+import TaskListScreen from './screens/TaskListScreen';\n+import AddTaskScreen from './screens/AddTaskScreen';\n+import { Provider } from 'react-redux';\n+import store from './store';\n+\n+const Stack = createStackNavigator();\n+\n+export default function App() {\n+  return (\n+    <Provider store={store}>\n+      <NavigationContainer>\n+        <Stack.Navigator initialRouteName=\"TaskList\">\n+          <Stack.Screen name=\"TaskList\" component={TaskListScreen} />\n+          <Stack.Screen name=\"AddTask\" component={AddTaskScreen} />\n+        </Stack.Navigator>\n+      </NavigationContainer>\n+    </Provider>\n+  );\n+}\n"
+                },
+                {
+                    "date": 1721844635236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,26 +19,4 @@\n       </NavigationContainer>\n     </Provider>\n   );\n }\n-import React from 'react';\n-import { NavigationContainer } from '@react-navigation/native';\n-import { createStackNavigator } from '@react-navigation/stack';\n-//import TaskListScreen from './screens/TaskListScreen';\n-//import AddTaskScreen from './screens/AddTaskScreen';\n-import { Provider } from 'react-redux';\n-//import store from './store';\n-\n-const Stack = createStackNavigator();\n-\n-export default function App() {\n-  return (\n-    <Provider store={store}>\n-      <NavigationContainer>\n-        <Stack.Navigator initialRouteName=\"TaskList\">\n-          <Stack.Screen name=\"TaskList\" component={TaskListScreen} />\n-          <Stack.Screen name=\"AddTask\" component={AddTaskScreen} />\n-        </Stack.Navigator>\n-      </NavigationContainer>\n-    </Provider>\n-  );\n-}\n"
+                },
+                {
+                    "date": 1721844757866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,21 +2,20 @@\n import { NavigationContainer } from '@react-navigation/native';\n import { createStackNavigator } from '@react-navigation/stack';\n import TaskListScreen from './screens/TaskListScreen';\n import AddTaskScreen from './screens/AddTaskScreen';\n-import { Provider } from 'react-redux';\n-import store from './store';\n+import { TaskProvider } from './context/TaskContext';\n \n const Stack = createStackNavigator();\n \n export default function App() {\n   return (\n-    <Provider store={store}>\n+    <TaskProvider>\n       <NavigationContainer>\n         <Stack.Navigator initialRouteName=\"TaskList\">\n           <Stack.Screen name=\"TaskList\" component={TaskListScreen} />\n           <Stack.Screen name=\"AddTask\" component={AddTaskScreen} />\n         </Stack.Navigator>\n       </NavigationContainer>\n-    </Provider>\n+    </TaskProvider>\n   );\n }\n"
+                },
+                {
+                    "date": 1721844777866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,9 @@\n-import React from 'react';\n-import { NavigationContainer } from '@react-navigation/native';\n-import { createStackNavigator } from '@react-navigation/stack';\n-import TaskListScreen from './screens/TaskListScreen';\n-import AddTaskScreen from './screens/AddTaskScreen';\n-import { TaskProvider } from './context/TaskContext';\n+import { Stack } from \"expo-router\";\n \n-const Stack = createStackNavigator();\n-\n-export default function App() {\n+export default function RootLayout() {\n   return (\n-    <TaskProvider>\n-      <NavigationContainer>\n-        <Stack.Navigator initialRouteName=\"TaskList\">\n-          <Stack.Screen name=\"TaskList\" component={TaskListScreen} />\n-          <Stack.Screen name=\"AddTask\" component={AddTaskScreen} />\n-        </Stack.Navigator>\n-      </NavigationContainer>\n-    </TaskProvider>\n+    <Stack>\n+      <Stack.Screen name=\"index\" />\n+    </Stack>\n   );\n }\n"
+                },
+                {
+                    "date": 1721844879619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,14 @@\n-import { Stack } from \"expo-router\";\n+import React from 'react';\n+import { Stack } from 'expo-router';\n+import { TaskProvider } from '../context/TaskContext';\n \n export default function RootLayout() {\n   return (\n-    <Stack>\n-      <Stack.Screen name=\"index\" />\n-    </Stack>\n+    <TaskProvider>\n+      <Stack>\n+        <Stack.Screen name=\"index\" options={{ title: 'Task List' }} />\n+        <Stack.Screen name=\"add-task\" options={{ title: 'Add Task' }} />\n+      </Stack>\n+    </TaskProvider>\n   );\n }\n"
+                },
+                {
+                    "date": 1721844889336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\n import { Stack } from 'expo-router';\n-import { TaskProvider } from '../context/TaskContext';\n+import { TaskProvider } from '../../';\n \n export default function RootLayout() {\n   return (\n     <TaskProvider>\n"
+                },
+                {
+                    "date": 1721844897937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,14 @@\n+import React from 'react';\n+import { Stack } from 'expo-router';\n+import { TaskProvider } from '../context/';\n+\n+export default function RootLayout() {\n+  return (\n+    <TaskProvider>\n+      <Stack>\n+        <Stack.Screen name=\"index\" options={{ title: 'Task List' }} />\n+        <Stack.Screen name=\"add-task\" options={{ title: 'Add Task' }} />\n+      </Stack>\n+    </TaskProvider>\n+  );\n+}\n"
+                },
+                {
+                    "date": 1721845722109,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,17 @@\n+import React from 'react';\n+import { Stack } from 'expo-router';\n+import { TaskProvider } from '../context/TaskContext';\n+import { Provider as PaperProvider } from 'react-native-paper';\n+\n+export default function RootLayout() {\n+  return (\n+    <PaperProvider>\n+      <TaskProvider>\n+        <Stack>\n+          <Stack.Screen name=\"index\" options={{ title: 'Task List' }} />\n+          <Stack.Screen name=\"add-task\" options={{ title: 'Add Task' }} />\n+        </Stack>\n+      </TaskProvider>\n+    </PaperProvider>\n+  );\n+}\n"
+                },
+                {
+                    "date": 1721849760676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,45 +1,17 @@\n import React from 'react';\n import { Stack } from 'expo-router';\n-import { TaskProvider } from '../context/TaskContext';\n+import { TaskProvider } from '../context/Context';\n import { Provider as PaperProvider } from 'react-native-paper';\n \n export default function RootLayout() {\n   return (\n     <PaperProvider>\n       <TaskProvider>\n         <Stack>\n-          <Stack.Screen name=\"index\" options={{ title: 'Task List' }} />\n+          <Stack.Screen name=\"index\"  options={{ title: 'Task List' }} />\n           <Stack.Screen name=\"add-task\" options={{ title: 'Add Task' }} />\n         </Stack>\n       </TaskProvider>\n     </PaperProvider>\n   );\n }\n-import React from 'react';\n-import { Stack } from 'expo-router';\n-import { TaskProvider } from '../context/';\n-\n-export default function RootLayout() {\n-  return (\n-    <TaskProvider>\n-      <Stack>\n-        <Stack.Screen name=\"index\" options={{ title: 'Task List' }} />\n-        <Stack.Screen name=\"add-task\" options={{ title: 'Add Task' }} />\n-      </Stack>\n-    </TaskProvider>\n-  );\n-}\n-import React from 'react';\n-import { Stack } from 'expo-router';\n-import { TaskProvider } from '../../';\n-\n-export default function RootLayout() {\n-  return (\n-    <TaskProvider>\n-      <Stack>\n-        <Stack.Screen name=\"index\" options={{ title: 'Task List' }} />\n-        <Stack.Screen name=\"add-task\" options={{ title: 'Add Task' }} />\n-      </Stack>\n-    </TaskProvider>\n-  );\n-}\n"
+                },
+                {
+                    "date": 1721849779514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   return (\n     <PaperProvider>\n       <TaskProvider>\n         <Stack>\n-          <Stack.Screen name=\"index\"  options={{ title: 'Task List' }} />\n+          <Stack.Screen name=\"index\"  options={{ title: 'Task List' },h} />\n           <Stack.Screen name=\"add-task\" options={{ title: 'Add Task' }} />\n         </Stack>\n       </TaskProvider>\n     </PaperProvider>\n"
+                },
+                {
+                    "date": 1721849825016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,18 @@\n+import React from 'react';\n+import { Stack } from 'expo-router';\n+import { TaskProvider } from '../context/Context';\n+import { Provider as PaperProvider } from 'react-native-paper';\n+\n+export default function RootLayout() {\n+  return (\n+    <PaperProvider>\n+      <TaskProvider>\n+        <Stack         options={{ headerShown: false }}\n+>\n+          <Stack.Screen name=\"index\"  options={{ title: 'Task List' }} />\n+          <Stack.Screen name=\"add-task\" options={{ title: 'Add Task' }} />\n+        </Stack>\n+      </TaskProvider>\n+    </PaperProvider>\n+  );\n+}\n"
+                },
+                {
+                    "date": 1721849831547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,30 +6,12 @@\n export default function RootLayout() {\n   return (\n     <PaperProvider>\n       <TaskProvider>\n-        <Stack         options={{ headerShown: false }}\n->\n+        <Stack o={{ headerShown: false }}>\n           <Stack.Screen name=\"index\"  options={{ title: 'Task List' }} />\n           <Stack.Screen name=\"add-task\" options={{ title: 'Add Task' }} />\n         </Stack>\n       </TaskProvider>\n     </PaperProvider>\n   );\n }\n-import React from 'react';\n-import { Stack } from 'expo-router';\n-import { TaskProvider } from '../context/Context';\n-import { Provider as PaperProvider } from 'react-native-paper';\n-\n-export default function RootLayout() {\n-  return (\n-    <PaperProvider>\n-      <TaskProvider>\n-        <Stack>\n-          <Stack.Screen name=\"index\"  options={{ title: 'Task List' },h} />\n-          <Stack.Screen name=\"add-task\" options={{ title: 'Add Task' }} />\n-        </Stack>\n-      </TaskProvider>\n-    </PaperProvider>\n-  );\n-}\n"
+                }
+            ],
+            "date": 1721844404308,
+            "name": "Commit-0",
+            "content": "import { Stack } from \"expo-router\";\n\nexport default function RootLayout() {\n  return (\n    <Stack>\n      <Stack.Screen name=\"index\" />\n      <Stack.Screen name=\"index\" />\n    </Stack>\n  );\n}\n"
+        }
+    ]
+}

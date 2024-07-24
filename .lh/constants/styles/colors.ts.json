@@ -1,0 +1,22 @@
+{
+    "sourceFile": "constants/styles/colors.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1721846050766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1721848951377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     background: '#f5f5f5', // Light Gray\n     surface: '#ffffff', // White\n     error: '#b00020', // Red\n     text: '#000000', // Black\n-    border: '#e0e0e0', // Light Gray Border\n+    textMuted: '#e0e0e0', // Light Gray Border\n   };\n   \n   export default colors;\n   \n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1721846050766,
+            "name": "Commit-0",
+            "content": "const colors = {\n    primary: '#6200ea', // Purple\n    secondary: '#03dac6', // Teal\n    background: '#f5f5f5', // Light Gray\n    surface: '#ffffff', // White\n    error: '#b00020', // Red\n    text: '#000000', // Black\n    border: '#e0e0e0', // Light Gray Border\n  };\n  \n  export default colors;\n  "
+        }
+    ]
+}

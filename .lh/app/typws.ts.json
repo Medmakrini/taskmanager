@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/typws.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1721845068522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1721845068522,
+            "name": "Commit-0",
+            "content": "export type RootStackParamList = {\n    'TaskList': undefined;\n    'add-task': undefined;\n  };\n  "
+        }
+    ]
+}

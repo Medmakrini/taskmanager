@@ -1,0 +1,22 @@
+{
+    "sourceFile": "app/types.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1721846660476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1721847232718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,11 @@\n     'TaskList': undefined;\n     'add-task': undefined;\n   };\n   \n-  export type Task = {\n-    id: string;\n-    title: string;\n-    description: string;\n-    completed: boolean;\n-  };\n-  \n\\ No newline at end of file\n+// types.ts\n+export interface Task {\n+  id: string;\n+  title: string;\n+  description: string;\n+  completed: boolean;\n+}\n"
+                }
+            ],
+            "date": 1721846660476,
+            "name": "Commit-0",
+            "content": "export type RootStackParamList = {\n    'TaskList': undefined;\n    'add-task': undefined;\n  };\n  \n  export type Task = {\n    id: string;\n    title: string;\n    description: string;\n    completed: boolean;\n  };\n  "
+        }
+    ]
+}
