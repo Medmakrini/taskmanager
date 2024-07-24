@@ -55,8 +55,8 @@ To add screenshots:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/task-manager-app.git
-    cd task-manager-app
+    git clone https://github.com/Medmakrini/taskmanager.git
+    cd taskmanager
     ```
 
 2. Install dependencies:
