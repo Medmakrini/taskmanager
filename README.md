@@ -28,13 +28,11 @@ To add screenshots:
 2. Upload your screenshot images to the `screenshots` folder.
 3. Reference the screenshots in your README using the following syntax:
 
-    ```markdown
      <p>
       <img src="https://github.com/Medmakrini/taskmanager/blob/main/assets/Demo/IMG_3179.PNG" width="200" />
       <img src="https://github.com/Medmakrini/taskmanager/blob/main/assets/Demo/IMG_3179.PNG" width="200" />
     </p>
 
-    ```
 
 ## Technologies Used
 
