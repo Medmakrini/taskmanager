@@ -20,10 +20,10 @@ Task Manager is a React Native application that helps users manage their daily t
 
 ## Screenshots
 
-     <p>
+<p>
       <img src="https://github.com/Medmakrini/taskmanager/blob/main/assets/Demo/IMG_3179.PNG" width="300" />
       <img src="https://github.com/Medmakrini/taskmanager/blob/main/assets/Demo/IMG_3180.PNG" width="300" />
-    </p>
+</p>
 
 
 ## Technologies Used
