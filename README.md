@@ -1,50 +1,120 @@
-# Welcome to your Expo app 👋
+# Task Manager App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Task Manager is a React Native application that helps users manage their daily tasks efficiently. The app supports features like adding, deleting, and marking tasks as complete or incomplete, with a special default task that links to a LinkedIn profile upon completion.
 
-## Get started
+## Table of Contents
 
-1. Install dependencies
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Technologies Used](#technologies-used)
+- [Setup Instructions](#setup-instructions)
+- [Deployment](#deployment)
 
-   ```bash
-   npm install
-   ```
+## Features
 
-2. Start the app
+- Add, delete, and mark tasks as complete/incomplete.
+- A default task that redirects to a LinkedIn profile upon completion.
+- Persist tasks using AsyncStorage.
+- Responsive and animated UI with react-native-animatable.
+- Context API for state management.
 
-   ```bash
-    npx expo start
-   ```
+## Screenshots
 
-In the output, you'll find options to open the app in a
+(Include screenshots of your app here)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+To add screenshots:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+1. Create a folder named `screenshots` in your project root directory.
+2. Upload your screenshot images to the `screenshots` folder.
+3. Reference the screenshots in your README using the following syntax:
 
-## Get a fresh project
+    ```markdown
+    ![Screenshot1](./screenshots/screenshot1.png)
+    ![Screenshot2](./screenshots/screenshot2.png)
+    ```
 
-When you're ready, run:
+## Technologies Used
 
-```bash
-npm run reset-project
-```
+- **React Native:** For building the mobile application.
+- **React Native Paper:** For UI components.
+- **AsyncStorage:** For persistent storage of tasks.
+- **react-native-animatable:** For animations.
+- **UUID:** For generating unique task IDs.
+- **React Navigation:** For navigating between screens.
+- **TypeScript:** For type safety and better development experience.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Setup Instructions
 
-## Learn more
+### Prerequisites
 
-To learn more about developing your project with Expo, look at the following resources:
+- Node.js (>=14.x)
+- npm or yarn
+- Expo CLI
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Installation
 
-## Join the community
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/task-manager-app.git
+    cd task-manager-app
+    ```
 
-Join our community of developers creating universal apps.
+2. Install dependencies:
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+3. Start the project:
+    ```bash
+    npm start
+    # or
+    yarn start
+    ```
+
+4. Run on a device or emulator:
+    - For iOS: `npm run ios` or `yarn ios`
+    - For Android: `npm run android` or `yarn android`
+
+## Deployment
+
+We will use Expo Application Services (EAS) for creating production builds for Android and iOS.
+
+### Android
+
+1. Configure EAS:
+    ```bash
+    eas build:configure
+    ```
+
+2. Create an Android build:
+    ```bash
+    eas build -p android --profile production
+    ```
+
+3. Download the APK/AAB file from the Expo dashboard.
+
+4. Test the build on an Android device.
+
+5. Publish the build to the Google Play Store.
+
+### iOS
+
+1. Configure EAS:
+    ```bash
+    eas build:configure
+    ```
+
+2. Create an iOS build:
+    ```bash
+    eas build -p ios --profile production
+    ```
+
+3. Download the IPA file from the Expo dashboard.
+
+4. Test the build on an iOS device using TestFlight.
+
+5. Submit the build to the App Store for review.
+
+---
