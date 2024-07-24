@@ -20,14 +20,6 @@ Task Manager is a React Native application that helps users manage their daily t
 
 ## Screenshots
 
-(Include screenshots of your app here)
-
-To add screenshots:
-
-1. Create a folder named `screenshots` in your project root directory.
-2. Upload your screenshot images to the `screenshots` folder.
-3. Reference the screenshots in your README using the following syntax:
-
      <p>
       <img src="https://github.com/Medmakrini/taskmanager/blob/main/assets/Demo/IMG_3179.PNG" width="300" />
       <img src="https://github.com/Medmakrini/taskmanager/blob/main/assets/Demo/IMG_3180.PNG" width="300" />
