@@ -13,7 +13,6 @@ Task Manager is a React Native application that helps users manage their daily t
 ## Features
 
 - Add, delete, and mark tasks as complete/incomplete.
-- A default task that redirects to a LinkedIn profile upon completion.
 - Persist tasks using AsyncStorage.
 - Responsive and animated UI with react-native-animatable.
 - Context API for state management.
