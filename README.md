@@ -29,8 +29,11 @@ To add screenshots:
 3. Reference the screenshots in your README using the following syntax:
 
     ```markdown
-  ![Screenshot1](https://github.com/Medmakrini/taskmanager/blob/main/assets/Demo/IMG_3179.PNG)
-  ![Screenshot2](https://github.com/Medmakrini/taskmanager/blob/main/assets/Demo/IMG_3179.PNG)
+     <p>
+      <img src="https://github.com/Medmakrini/taskmanager/blob/main/assets/Demo/IMG_3179.PNG" width="200" />
+      <img src="https://github.com/Medmakrini/taskmanager/blob/main/assets/Demo/IMG_3179.PNG" width="200" />
+    </p>
+
     ```
 
 ## Technologies Used
